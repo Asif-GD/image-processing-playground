@@ -12,5 +12,6 @@ filtered_image.save("./resultant-images/pikachu_sharpen.png", format="png")
 # print(dir(ImageFilter))
 # print(dir(Image))
 
+# grey_scale
 filtered_image = sample_image.convert('L')
 filtered_image.save("./resultant-images/pikachu_grey.png", format="png")
