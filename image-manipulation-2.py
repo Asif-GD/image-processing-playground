@@ -8,7 +8,7 @@ reduced_image.save("./resultant-images/reduced_astronaut.jpg")
 
 # thumbnail() -> makes changes on the existing file, make a copy before using it.
 thumbnail_image = sample_image_2.copy()
-thumbnail_image.thumbnail((64, 64), resample=Image.LANCZOS)
+thumbnail_image.thumbnail((100, 100), resample=Image.BILINEAR)
 thumbnail_image.save("./resultant-images/thumbnail_astronaut.jpg")
 
 #  resize()
