@@ -10,17 +10,26 @@ JPEG to PNG Convertor
 
 import os
 import sys
+from PIL import Image
 
-input_folder_path = sys.argv[1]
+input_folder = sys.argv[1]
+output_folder = sys.argv[2]
 # input_folder_path = "sample-images"
 # input_folder_path = "D:\Repositories\image-processing-playground\sample-images"
+# print(input_folder_path)
 
-files_list = os.listdir(input_folder_path)
+files_list = os.listdir(input_folder)
 
 # test -> print all the file names
-# for name in files_list:
-#     print(name)
+# for file in files_list:
+#     print(file)
 
-# check if a folder exists, or else create it.
-if not os.path.exists(sys.argv[2]):
-    os.mkdir(f"{sys.argv[2]}")
+# check if a folder exists, or else create it
+if not os.path.exists(output_folder):
+    os.mkdir(f"{output_folder}")
+
+# loop through the directory and convert all jpeg files to png files
+for file in files_list:
+    sample_image = Image.open(f".\\{input_folder}{file}")
+    only_file_name = os.path.splitext(file)
+    sample_image.save(f".\\{output_folder}{only_file_name[0]}.png", format="PNG")
