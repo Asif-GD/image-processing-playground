@@ -15,13 +15,12 @@ input_folder_path = sys.argv[1]
 # input_folder_path = "sample-images"
 # input_folder_path = "D:\Repositories\image-processing-playground\sample-images"
 
-# for root, dirs, files in os.walk(input_folder_path):
-#     for file in files:
-#         # append the file name to the list
-#         file_list.append(os.path.join(root, file))
-
 files_list = os.listdir(input_folder_path)
 
 # test -> print all the file names
 # for name in files_list:
 #     print(name)
+
+# check if a folder exists, or else create it.
+if not os.path.exists(sys.argv[2]):
+    os.mkdir(f"{sys.argv[2]}")
